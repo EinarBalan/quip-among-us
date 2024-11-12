@@ -47,5 +47,5 @@ server.listen(PORT, (error) => {
   if (error) {
     return console.log("something bad happened", error);
   }
-  console.log("listening on " + PORT + "...");
+  console.log("listening on http://localhost:" + PORT + "...");
 });

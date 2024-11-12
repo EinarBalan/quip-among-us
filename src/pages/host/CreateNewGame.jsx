@@ -53,25 +53,25 @@ class CreateNewGame extends React.Component {
             Allow Picture Uploads
           </label>
         </div>
-        <button
+        {/* <button
           className="submit-form-button"
           onClick={() => {
             this.setState({ playPunchGame: true }, this.onStartGameClick);
           }}
         >
           Start new Punch Game
-        </button>
-        <button
+        </button> */}
+        {/* <button
           className="submit-form-button"
           onClick={() => {
             this.setState({ playShakeGame: true }, this.onStartGameClick);
           }}
         >
           Start new Shake Game
-        </button>
-        <button className="test-audio-button" onClick={() => speakText("Testing")}>
+        </button> */}
+        {/* <button className="test-audio-button" onClick={() => speakText("Testing")}>
           Test Audio
-        </button>
+        </button> */}
       </div>
     );
   }
