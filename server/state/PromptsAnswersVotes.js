@@ -147,6 +147,12 @@ export function assignPromptsForPlayers({ players, roomCode, roomOptions }) {
     unusedPromptsForRoom[roomCode].push(prompt);
   }
 
+  // TODO: add AI player that pretends to be a real player (should be easy to switch which model, i.e. via langchain)
+  // TODO: add option to vote for who AI is (optionally, you don't have to do it every round)
+  // TODO: track percentage of time AI is voted to be AI
+  // TODO: track percentage of time AI wins
+  // TODO: generate report at end of game with stats
+
   switch (players.length) {
     case 3: {
       const promptsForPlayer1 = { player: players[0], prompts: [] };
