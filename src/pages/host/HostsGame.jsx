@@ -241,7 +241,7 @@ class HostsGame extends Component {
         gamePlayersResults: JSON.parse(JSON.stringify(this.state.punchPlayers)),
       });
     });
-    playBackgroundMusic();
+    // playBackgroundMusic();
   }
 
   onStartNewGameNewPlayersClick() {

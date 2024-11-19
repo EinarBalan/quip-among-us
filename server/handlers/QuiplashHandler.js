@@ -53,7 +53,7 @@ export function initializeQuiplashHandler(io) {
     });
     socket.on(WS_EVENT.INCOMING.PLAYER_JOIN, (player) => {
       let newPlayerName = player.playerName;
-      if (doesPlayerNameAlreadyExist(player.roomCode.toUpperCase(), player.playerName)) {
+      while (doesPlayerNameAlreadyExist(player.roomCode.toUpperCase(), newPlayerName)) {
         newPlayerName += " ditto";
       }
       if (

@@ -153,6 +153,8 @@ export function assignPromptsForPlayers({ players, roomCode, roomOptions }) {
   // TODO: track percentage of time AI wins
   // TODO: generate report at end of game with stats
 
+
+  
   switch (players.length) {
     case 3: {
       const promptsForPlayer1 = { player: players[0], prompts: [] };
