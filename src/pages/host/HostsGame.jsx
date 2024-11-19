@@ -275,24 +275,25 @@ class HostsGame extends Component {
           </div>
         );
       case "SHOW_PLAYER_POINTS":
-        const popularAnswerOne = this.state.popularAnswers[0].answer.startsWith("data:") ? (
-          <img className="uploaded-image" src={this.state.popularAnswers[0].answer} />
-        ) : (
-          <div>{this.state.popularAnswers[0].answer}</div>
-        );
-        const popularAnswerTwo = this.state.popularAnswers[1].answer.startsWith("data:") ? (
-          <img className="uploaded-image" src={this.state.popularAnswers[1].answer} />
-        ) : (
-          <div>{this.state.popularAnswers[1].answer}</div>
-        );
+
+        // const popularAnswerOne = this.state.popularAnswers[0].answer.startsWith("data:") ? (
+        //   <img className="uploaded-image" src={this.state.popularAnswers[0].answer} />
+        // ) : (
+        //   <div>{this.state.popularAnswers[0].answer}</div>
+        // );
+        // const popularAnswerTwo = this.state.popularAnswers[1].answer.startsWith("data:") ? (
+        //   <img className="uploaded-image" src={this.state.popularAnswers[1].answer} />
+        // ) : (
+        //   <div>{this.state.popularAnswers[1].answer}</div>
+        // );
         return (
           <div>
             <h1>Final Scores</h1>
             <div className="player-scores-container">
               <div className="player-scores-column">
-                <div>Most popular answer</div>
+                {/* <div>Most popular answer</div>
                 <div className="popular-answer">{popularAnswerOne}</div>
-                <div className="popular-answer-submitter">{`Submitted by ${this.state.popularAnswers[0].submitter}`}</div>
+                <div className="popular-answer-submitter">{`Submitted by ${this.state.popularAnswers[0].submitter}`}</div> */}
               </div>
               <div className="player-scores-column">
                 <div className="player-scores">
@@ -318,9 +319,9 @@ class HostsGame extends Component {
                 </div>
               </div>
               <div className="player-scores-column">
-                <div>Second most popular answer</div>
+                {/* <div>Second most popular answer</div>
                 <div className="popular-answer">{popularAnswerTwo}</div>
-                <div className="popular-answer-submitter">{`Submitted by ${this.state.popularAnswers[1].submitter}`}</div>
+                <div className="popular-answer-submitter">{`Submitted by ${this.state.popularAnswers[1].submitter}`}</div> */}
               </div>
             </div>
           </div>

@@ -18,14 +18,24 @@ export function deleteSavedPromptsForRoom(roomCode) {
   delete winningAnswersForRoom[roomCode];
 }
 
-export function getOnePromptAndAnswersForRoom(roomCode) {
+export function getOnePromptAndAnswersForRoom(roomCode) { //TODO: ADD AI GENERATED ANSWER 
   const prompt = unusedPromptsForRoom[roomCode].pop();
+
+  // add AI generated answer
+  // promptsForRoom[roomCode][prompt]["AI generated answer"] = { submitter: "AI" };
+  storeAnswerForPrompt({ prompt, playerName: "AI", answer: "AI generated answer", roomCode });
+
   const submitters = [];
   Object.values(promptsForRoom[roomCode][prompt]).forEach((answerProps) => {
     submitters.push(answerProps.submitter);
   });
+
+  //shuffle answers
+  const answers = Object.keys(promptsForRoom[roomCode][prompt]);
+  answers.sort(() => Math.random() - 0.5);
+
   return {
-    answers: Object.keys(promptsForRoom[roomCode][prompt]),
+    answers,
     prompt,
     submitters,
   };
@@ -41,9 +51,11 @@ export function getPopularAnswers(roomCode) {
   return winningAnswers;
 }
 
-export function getVotes(prompt, roomCode, numberOfPlayers) {
+export function getVotes(prompt, roomCode, numberOfPlayers) { // TODO: Fix me
   const votes = [];
   Object.entries(promptsForRoom[roomCode][prompt]).forEach(([answer, properties]) => {
+    console.log("answer ", answer); 
+    console.log("properties ", properties); 
     const totalVotesForAnswer = properties.votes ? properties.votes : [];
     votes.push({
       answer,
@@ -52,6 +64,9 @@ export function getVotes(prompt, roomCode, numberOfPlayers) {
       votes: totalVotesForAnswer,
     });
   });
+
+  console.log("votes ", votes);
+
   // workaround in case both answers are the same
   if (!votes[1]) {
     votes[1] = { answer: "N/A", submitter: "Generated", votes: [] };
@@ -115,12 +130,14 @@ export function storeAnswerForPrompt({ prompt, playerName, answer, roomCode }) {
     }
     promptsForRoom[roomCode][prompt][realAnswer] = {};
     promptsForRoom[roomCode][prompt][realAnswer].submitter = playerName;
+    promptsForRoom[roomCode][prompt][realAnswer].votes = [];
+
   }
 }
 
 export function storeVoteForPrompt({ prompt, playerName, roomCode, answerVotedFor }) {
   if (!promptsForRoom[roomCode][prompt][answerVotedFor].votes) {
-    promptsForRoom[roomCode][prompt][answerVotedFor].votes = [];
+    promptsForRoom[roomCode][prompt][answerVotedFor].votes = []; 
   }
   promptsForRoom[roomCode][prompt][answerVotedFor].votes.push(playerName);
 }
@@ -180,6 +197,8 @@ export function assignPromptsForPlayers({ players, roomCode, roomOptions }) {
   // TODO: track percentage of time AI wins
   // TODO: generate report at end of game with stats
 
+  //TODO: alternative, for every round, include an additional answer that is AI generated (this is probably better)
+
   let promptAssignments = generatePairs(players.length);
 
   // shuffle prompt assignments
@@ -192,175 +211,6 @@ export function assignPromptsForPlayers({ players, roomCode, roomOptions }) {
     promptsForPlayer.prompts.push(prompts[pair[1] - 1]);
     promptsForPlayers.push(promptsForPlayer);
   }
-
-  // switch (players.length) {
-  //   case 3: {
-  //     const promptsForPlayer1 = { player: players[0], prompts: [] };
-  //     promptsForPlayer1.prompts.push(prompts[0]);
-  //     promptsForPlayer1.prompts.push(prompts[1]);
-  //     promptsForPlayers.push(promptsForPlayer1);
-  //     const promptsForPlayer2 = { player: players[1], prompts: [] };
-  //     promptsForPlayer2.prompts.push(prompts[0]);
-  //     promptsForPlayer2.prompts.push(prompts[2]);
-  //     promptsForPlayers.push(promptsForPlayer2);
-  //     const promptsForPlayer3 = { player: players[2], prompts: [] };
-  //     promptsForPlayer3.prompts.push(prompts[1]);
-  //     promptsForPlayer3.prompts.push(prompts[2]);
-  //     promptsForPlayers.push(promptsForPlayer3);
-  //     break;
-  //   }
-  //   case 4: {
-  //     const promptsForPlayer1 = { player: players[0], prompts: [] };
-  //     promptsForPlayer1.prompts.push(prompts[0]);
-  //     promptsForPlayer1.prompts.push(prompts[3]);
-  //     promptsForPlayers.push(promptsForPlayer1);
-  //     const promptsForPlayer2 = { player: players[1], prompts: [] };
-  //     promptsForPlayer2.prompts.push(prompts[0]);
-  //     promptsForPlayer2.prompts.push(prompts[2]);
-  //     promptsForPlayers.push(promptsForPlayer2);
-  //     const promptsForPlayer3 = { player: players[2], prompts: [] };
-  //     promptsForPlayer3.prompts.push(prompts[1]);
-  //     promptsForPlayer3.prompts.push(prompts[2]);
-  //     promptsForPlayers.push(promptsForPlayer3);
-  //     const promptsForPlayer4 = { player: players[3], prompts: [] };
-  //     promptsForPlayer4.prompts.push(prompts[1]);
-  //     promptsForPlayer4.prompts.push(prompts[3]);
-  //     promptsForPlayers.push(promptsForPlayer4);
-  //     break;
-  //   }
-  //   case 5: {
-  //     const promptsForPlayer1 = { player: players[0], prompts: [] };
-  //     promptsForPlayer1.prompts.push(prompts[0]);
-  //     promptsForPlayer1.prompts.push(prompts[1]);
-  //     promptsForPlayers.push(promptsForPlayer1);
-  //     const promptsForPlayer2 = { player: players[1], prompts: [] };
-  //     promptsForPlayer2.prompts.push(prompts[0]);
-  //     promptsForPlayer2.prompts.push(prompts[2]);
-  //     promptsForPlayers.push(promptsForPlayer2);
-  //     const promptsForPlayer3 = { player: players[2], prompts: [] };
-  //     promptsForPlayer3.prompts.push(prompts[2]);
-  //     promptsForPlayer3.prompts.push(prompts[3]);
-  //     promptsForPlayers.push(promptsForPlayer3);
-  //     const promptsForPlayer4 = { player: players[3], prompts: [] };
-  //     promptsForPlayer4.prompts.push(prompts[1]);
-  //     promptsForPlayer4.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer4);
-  //     const promptsForPlayer5 = { player: players[4], prompts: [] };
-  //     promptsForPlayer5.prompts.push(prompts[3]);
-  //     promptsForPlayer5.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer5);
-  //     break;
-  //   }
-  //   case 6: {
-  //     const promptsForPlayer1 = { player: players[0], prompts: [] };
-  //     promptsForPlayer1.prompts.push(prompts[0]);
-  //     promptsForPlayer1.prompts.push(prompts[3]);
-  //     promptsForPlayers.push(promptsForPlayer1);
-  //     const promptsForPlayer2 = { player: players[1], prompts: [] };
-  //     promptsForPlayer2.prompts.push(prompts[0]);
-  //     promptsForPlayer2.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer2);
-  //     const promptsForPlayer3 = { player: players[2], prompts: [] };
-  //     promptsForPlayer3.prompts.push(prompts[1]);
-  //     promptsForPlayer3.prompts.push(prompts[5]);
-  //     promptsForPlayers.push(promptsForPlayer3);
-  //     const promptsForPlayer4 = { player: players[3], prompts: [] };
-  //     promptsForPlayer4.prompts.push(prompts[1]);
-  //     promptsForPlayer4.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer4);
-  //     const promptsForPlayer5 = { player: players[4], prompts: [] };
-  //     promptsForPlayer5.prompts.push(prompts[2]);
-  //     promptsForPlayer5.prompts.push(prompts[5]);
-  //     promptsForPlayers.push(promptsForPlayer5);
-  //     const promptsForPlayer6 = { player: players[5], prompts: [] };
-  //     promptsForPlayer6.prompts.push(prompts[2]);
-  //     promptsForPlayer6.prompts.push(prompts[3]);
-  //     promptsForPlayers.push(promptsForPlayer6);
-  //     break;
-  //   }
-  //   case 7: {
-  //     const promptsForPlayer1 = { player: players[0], prompts: [] };
-  //     promptsForPlayer1.prompts.push(prompts[0]);
-  //     promptsForPlayer1.prompts.push(prompts[3]);
-  //     promptsForPlayers.push(promptsForPlayer1);
-  //     const promptsForPlayer2 = { player: players[1], prompts: [] };
-  //     promptsForPlayer2.prompts.push(prompts[0]);
-  //     promptsForPlayer2.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer2);
-  //     const promptsForPlayer3 = { player: players[2], prompts: [] };
-  //     promptsForPlayer3.prompts.push(prompts[1]);
-  //     promptsForPlayer3.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer3);
-  //     const promptsForPlayer4 = { player: players[3], prompts: [] };
-  //     promptsForPlayer4.prompts.push(prompts[1]);
-  //     promptsForPlayer4.prompts.push(prompts[5]);
-  //     promptsForPlayers.push(promptsForPlayer4);
-  //     const promptsForPlayer5 = { player: players[4], prompts: [] };
-  //     promptsForPlayer5.prompts.push(prompts[2]);
-  //     promptsForPlayer5.prompts.push(prompts[5]);
-  //     promptsForPlayers.push(promptsForPlayer5);
-  //     const promptsForPlayer6 = { player: players[5], prompts: [] };
-  //     promptsForPlayer6.prompts.push(prompts[2]);
-  //     promptsForPlayer6.prompts.push(prompts[6]);
-  //     promptsForPlayers.push(promptsForPlayer6);
-  //     const promptsForPlayer7 = { player: players[6], prompts: [] };
-  //     promptsForPlayer7.prompts.push(prompts[3]);
-  //     promptsForPlayer7.prompts.push(prompts[6]);
-  //     promptsForPlayers.push(promptsForPlayer7);
-  //     break;
-  //   }
-  //   case 8: {
-  //     const promptsForPlayer1 = { player: players[0], prompts: [] };
-  //     promptsForPlayer1.prompts.push(prompts[0]);
-  //     promptsForPlayer1.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer1);
-  //     const promptsForPlayer2 = { player: players[1], prompts: [] };
-  //     promptsForPlayer2.prompts.push(prompts[0]);
-  //     promptsForPlayer2.prompts.push(prompts[5]);
-  //     promptsForPlayers.push(promptsForPlayer2);
-  //     const promptsForPlayer3 = { player: players[2], prompts: [] };
-  //     promptsForPlayer3.prompts.push(prompts[1]);
-  //     promptsForPlayer3.prompts.push(prompts[5]);
-  //     promptsForPlayers.push(promptsForPlayer3);
-  //     const promptsForPlayer4 = { player: players[3], prompts: [] };
-  //     promptsForPlayer4.prompts.push(prompts[1]);
-  //     promptsForPlayer4.prompts.push(prompts[6]);
-  //     promptsForPlayers.push(promptsForPlayer4);
-  //     const promptsForPlayer5 = { player: players[4], prompts: [] };
-  //     promptsForPlayer5.prompts.push(prompts[2]);
-  //     promptsForPlayer5.prompts.push(prompts[6]);
-  //     promptsForPlayers.push(promptsForPlayer5);
-  //     const promptsForPlayer6 = { player: players[5], prompts: [] };
-  //     promptsForPlayer6.prompts.push(prompts[2]);
-  //     promptsForPlayer6.prompts.push(prompts[7]);
-  //     promptsForPlayers.push(promptsForPlayer6);
-  //     const promptsForPlayer7 = { player: players[6], prompts: [] };
-  //     promptsForPlayer7.prompts.push(prompts[3]);
-  //     promptsForPlayer7.prompts.push(prompts[7]);
-  //     promptsForPlayers.push(promptsForPlayer7);
-  //     const promptsForPlayer8 = { player: players[7], prompts: [] };
-  //     promptsForPlayer8.prompts.push(prompts[3]);
-  //     promptsForPlayer8.prompts.push(prompts[4]);
-  //     promptsForPlayers.push(promptsForPlayer8);
-  //     break;
-  //   }
-  //   // - 3 players - 3 rounds - players get two prompts (1,2)(1,3)(2,3)
-  //   // - 3 players - 4 rounds - players get two prompts (1,2)(3,AI)(2,3)(1,AI) - should shuffle order of players to change position of AI
-  //   // - 4 players - 4 rounds - players get two prompts (1,2)(3,4)(2,3)(1,4)
-  //   // - 4 players - 5 rounds - players get two prompts (1,2)(1,4)(2,3)(3,AI)(4,AI)
-  //   // - 5 players - 5 rounds - players get two prompts (1,2)(1,4)(2,3)(3,5)(4,5)
-  //   // - 5 players - 5 rounds - players get two prompts (1,2)(1,4)(2,3)(3,5)(4,5)
-  //   // - 6 players - 6 rounds - players get two prompts (1,2)(3,4)(5,6)(1,6)(2,4)(3,5)
-  //   // - 6 players - 6 rounds - players get two prompts (1,2)(3,4)(5,6)(1,6)(2,4)(3,5)
-  //   // - 7 players - 7 rounds - players get two prompts (1,2)(3,4)(5,6)(1,7)(2,3)(4,5)(6,7)
-  //   // - 7 players - 7 rounds - players get two prompts (1,2)(3,4)(5,6)(1,7)(2,3)(4,5)(6,7)
-  //   // - 8 players - 8 rounds - players get two prompts (1,2)(3,4)(5,6)(7,8)(1,8)(2,3)(4,5)(6,7)
-  //   // - 8 players - 8 rounds - players get two prompts (1,2)(3,4)(5,6)(7,8)(1,8)(2,3)(4,5)(6,7)
-  //   // - 9 players - 9 rounds - players get two prompts (1,2)(3,4)(5,6)(7,8)(1,9)(2,3)(4,5)(6,7)(8,9)
-  //   // - 9 players - 9 rounds - players get two prompts (1,2)(3,4)(5,6)(7,8)(1,9)(2,3)(4,5)(6,7)(8,9)
-  //   default:
-  //     throw new Error("Invalid number of players.  You must have between 3-8 players.");
-  // }
 
   return promptsForPlayers;
 }

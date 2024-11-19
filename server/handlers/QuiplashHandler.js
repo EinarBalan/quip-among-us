@@ -44,6 +44,8 @@ export function initializeQuiplashHandler(io) {
       if (hasMorePromptsForRoom(socket.roomCode)) {
         startNewRound(socket, io);
       } else {
+        // console.log("Game is over for room ", socket.roomCode);
+        // console.log("Popular answers: ", getPopularAnswers(socket.roomCode));
         io.in(socket.roomCode).emit(
           WS_EVENT.OUTGOING.SHOW_PLAYER_POINTS,
           getPointsSortedHighestFirst(socket.roomCode),
@@ -98,7 +100,8 @@ export function initializeQuiplashHandler(io) {
         console.log("Got vote from ", socket.nickname, ": ", answerVotedFor);
       }
 
-      storeVoteForPrompt({ prompt, playerName: socket.nickname, roomCode: socket.roomCode, answerVotedFor });
+      storeVoteForPrompt({ prompt, playerName: socket.nickname, roomCode: socket.roomCode, answerVotedFor }); //! TODO fix votes
+
       // TALLY Votes and display all votes
       io.in(socket.roomCode).clients((error, clients) => {
         if (error) throw error;

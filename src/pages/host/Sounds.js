@@ -1,6 +1,6 @@
 import lobbyOst from '../../assets/lobby-ost.mp3';
 
-const GLOBAL_VOLUME = 0.25;
+const GLOBAL_VOLUME = 0;
 const backgroundMusic = new Audio(lobbyOst);
 
 export function playBackgroundMusic() {

@@ -45,7 +45,7 @@ export function createRoom(roomOptions) {
   return roomCode;
 }
 
-export function deleteRoom(roomCode) {
+export function deleteRoom(roomCode)  {
   delete rooms[roomCode];
 }
 
