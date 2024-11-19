@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import "./HostsGame.css";
 import { getHostSocket } from "../../SocketIoConnection";
 import Countdown from "react-countdown";
-import { playBackgroundMusic, playPunchSound, playPunchHitSound, playShakeSound, speakText } from "./Sounds";
+import { playBackgroundMusic, stopBackgroundMusic, playPunchSound, playPunchHitSound, playShakeSound, speakText } from "./Sounds";
 import holdPhoneDownImage from "../../images/hold-phone-down.png";
 import holdPhoneMidImage from "../../images/hold-phone-mid.png";
 import holdPhoneUpImage from "../../images/hold-phone-up.png";
@@ -246,6 +246,7 @@ class HostsGame extends Component {
 
   onStartNewGameNewPlayersClick() {
     this.props.history.push("/create");
+    stopBackgroundMusic();
   }
 
   onStartNewGameSamePlayersClick() {

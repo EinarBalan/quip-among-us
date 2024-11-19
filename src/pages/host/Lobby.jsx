@@ -31,7 +31,6 @@ class Lobby extends Component {
       playWooYeahSound();
     });
     playBackgroundMusic();
-    console.log("playing bg");
   }
 
   getConnectedPlayersComponent() {

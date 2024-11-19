@@ -78,7 +78,7 @@ export function initializeQuiplashHandler(io) {
       } else {
         console.log("Got answer from ", socket.nickname, ": ", answer);
       }
-      storeAnswerForPrompt({ prompt, playerName: socket.nickname, answer, roomCode: socket.roomCode });
+      storeAnswerForPrompt({ prompt, playerName: socket.nickname, answer, roomCode: socket.roomCode }); //! important
       // CHECK IF ALL PLAYERS HAVE SUBMITTED, then go to next phase (voting)
       const expectedNumberOfAnswers = getPlayersOfRoom(socket.roomCode).length * 2;
       const receivedNumberOfAnswers = getNumberOfAnswersForRoom(socket.roomCode);

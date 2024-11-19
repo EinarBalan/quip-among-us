@@ -1,12 +1,16 @@
 import lobbyOst from '../../assets/lobby-ost.mp3';
 
 const GLOBAL_VOLUME = 0.25;
+const backgroundMusic = new Audio(lobbyOst);
 
 export function playBackgroundMusic() {
-  const backgroundMusic = new Audio(lobbyOst);
   backgroundMusic.loop = true; // Loop background music
-  backgroundMusic.volume = GLOBAL_VOLUME / 6;
+  backgroundMusic.volume = GLOBAL_VOLUME / 3;
   backgroundMusic.play();
+}
+
+export function stopBackgroundMusic() {
+  backgroundMusic.pause();
 }
 
 export function playPunchSound() {
