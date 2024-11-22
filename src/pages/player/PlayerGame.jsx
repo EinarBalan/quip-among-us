@@ -50,7 +50,14 @@ class PlayerGame extends Component {
       this.props.history.push("/");
     });
     socket.on("START_GAME", (promptsToAnswer, roomOptions) =>
-      this.setState({ phase: "STARTED", promptsToAnswer, currentPromptNumber: 0, roomOptions }),
+      this.setState({ 
+        phase: "STARTED", 
+        promptsToAnswer, 
+        currentPromptNumber: 0, 
+        roomOptions,
+        funnyVoteSubmitted: null,
+        aiVoteSubmitted: null,
+      }),
     );
     socket.on("START_VOTING_PHASE", (onePromptAndAnswers) =>
       this.setState({
@@ -87,9 +94,24 @@ class PlayerGame extends Component {
     }
   }
 
-  handleSubmitVoteClick(answerVotedFor) {
-    getPlayerSocket().emit("SUBMIT_VOTE", { prompt: this.state.prompt, answerVotedFor });
-    this.setState({ phase: "WAITING_FOR_NEXT_ROUND" });
+  handleSubmitVoteClick(answerVotedFor, isFunnyVote) { //TODO: modify this so that it will only emit if both votes are submitted
+    if (isFunnyVote) {
+      this.setState({ funnyVoteSubmitted: answerVotedFor}, this.checkAndSubmitVote);
+    }
+    else {
+      this.setState({ aiVoteSubmitted: answerVotedFor}, this.checkAndSubmitVote);
+    }
+  }
+
+  checkAndSubmitVote() {
+    if (this.state.funnyVoteSubmitted && this.state.aiVoteSubmitted) {
+      const answerVotedFor = {
+        funny: this.state.funnyVoteSubmitted,
+        ai: this.state.aiVoteSubmitted
+      }
+      getPlayerSocket().emit("SUBMIT_VOTE", { prompt: this.state.prompt, answerVotedFor });
+      this.setState({ phase: "WAITING_FOR_NEXT_ROUND" });
+    }
   }
 
   onAllowAccelerometerAccess() {
@@ -188,7 +210,7 @@ class PlayerGame extends Component {
         return (
           <div>
             <h1 dangerouslySetInnerHTML={{ __html: this.state.prompt }}></h1>
-            <h2>Which one do you like more?</h2>
+            <h2>Which one do you like more</h2>
             {this.state.votingOptions.map((voteOption) => {
               let buttonText = voteOption;
               if (voteOption.startsWith("data:")) {
@@ -200,7 +222,16 @@ class PlayerGame extends Component {
               }
               answersCount++;
               return (
-                <button className="player-submit-button" onClick={() => this.handleSubmitVoteClick(voteOption)}>
+                <button className="player-submit-button" onClick={() => this.handleSubmitVoteClick(voteOption, true)}>
+                  {buttonText}
+                </button>
+              );
+            })}
+            <h2>Which is AI generated?</h2>
+            {this.state.votingOptions.map((voteOption) => {
+              let buttonText = voteOption;
+              return (
+                <button className="player-submit-button" onClick={() => this.handleSubmitVoteClick(voteOption, false)}>
                   {buttonText}
                 </button>
               );

@@ -145,6 +145,7 @@ class HostsGame extends Component {
     });
     socket.on("VOTING_RESULTS", (votingResults, hasMoreRounds) => {
       this.setState({ phase: "VOTING_RESULTS_PHASE", hasMoreRounds, votingResults });
+
       for (let votingResult of votingResults) {
         if (votingResult.state === "WINNER") {
           if (votingResult.quiplash) {

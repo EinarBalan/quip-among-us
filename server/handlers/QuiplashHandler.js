@@ -22,10 +22,15 @@ import {
   storeVoteForPrompt,
 } from "../state/PromptsAnswersVotes";
 import WS_EVENT from "./WebsocketEvents";
+import { getReport } from "../state/PromptsAnswersVotes";
+
+const fs = require("fs");
+const path = require("path");
 
 /**
  * Handles all player/server interactions
  */
+
 export function initializeQuiplashHandler(io) {
   io.on(WS_EVENT.DEFAULT_CONNECTION, (socket) => {
     socket.on(WS_EVENT.INCOMING.HOST_JOINED_ROOM, (roomCode) => {
@@ -51,6 +56,18 @@ export function initializeQuiplashHandler(io) {
           getPointsSortedHighestFirst(socket.roomCode),
           getPopularAnswers(socket.roomCode),
         );
+
+        // get report and write to file
+        const report = getReport(socket.roomCode);
+
+        const reportPath = path.join(__dirname, "../reports", `${socket.roomCode}.json`);
+        fs.writeFile(reportPath, JSON.stringify(report, null, 2), (err) => {
+          if (err) {
+            console.error("Error writing report to file:", err);
+          } else {
+            console.log("Report successfully written to", reportPath);
+          }
+        });
       }
     });
     socket.on(WS_EVENT.INCOMING.PLAYER_JOIN, (player) => {
@@ -94,13 +111,19 @@ export function initializeQuiplashHandler(io) {
       }
     });
     socket.on(WS_EVENT.INCOMING.SUBMIT_VOTE, ({ prompt, answerVotedFor }) => {
-      if (answerVotedFor.startsWith("data:")) {
+      if (answerVotedFor.funny.startsWith("data:")) {
         console.log("Got vote from ", socket.nickname, " for picture");
       } else {
-        console.log("Got vote from ", socket.nickname, ": ", answerVotedFor);
+        console.log("Got vote from ", socket.nickname, ": ", answerVotedFor.funny);
       }
 
-      storeVoteForPrompt({ prompt, playerName: socket.nickname, roomCode: socket.roomCode, answerVotedFor }); //! TODO fix votes
+      storeVoteForPrompt({ 
+        prompt, 
+        playerName: socket.nickname, 
+        roomCode: socket.roomCode, 
+        answerVotedFor: answerVotedFor.funny, 
+        aiVote: answerVotedFor.ai 
+      }); 
 
       // TALLY Votes and display all votes
       io.in(socket.roomCode).clients((error, clients) => {

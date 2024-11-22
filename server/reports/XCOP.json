@@ -1,0 +1,59 @@
+{
+  "“This just in! A _________ has won the election and will become the new governor of Texas.” ": {
+    "1": {
+      "submitter": "yo",
+      "votes": []
+    },
+    "3": {
+      "submitter": "yo ditto ditto",
+      "votes": [
+        "yo ditto"
+      ]
+    },
+    "AI generated answer": {
+      "submitter": "AI",
+      "votes": [],
+      "aiVotes": [
+        "yo ditto"
+      ]
+    }
+  },
+  "The worst thing you could stick in a toaster ": {
+    "2": {
+      "submitter": "yo ditto",
+      "votes": []
+    },
+    "3": {
+      "submitter": "yo ditto ditto",
+      "votes": [
+        "yo"
+      ]
+    },
+    "AI generated answer": {
+      "submitter": "AI",
+      "votes": [],
+      "aiVotes": [
+        "yo"
+      ]
+    }
+  },
+  "A good puck replacement if they run out of pucks in a game of hockey": {
+    "1": {
+      "submitter": "yo",
+      "votes": [
+        "yo ditto ditto"
+      ]
+    },
+    "2": {
+      "submitter": "yo ditto",
+      "votes": []
+    },
+    "AI generated answer": {
+      "submitter": "AI",
+      "votes": [],
+      "aiVotes": [
+        "yo ditto ditto"
+      ]
+    }
+  }
+}

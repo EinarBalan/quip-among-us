@@ -2,7 +2,9 @@ import { getRandomPG13Prompt } from "./generated-data/Prompts.pg13";
 import { getRandomPicturePrompt } from "./generated-data/Prompts.pics";
 
 const POINTS_PER_VOTE = 100;
-const promptsForRoom = {};
+const promptsForRoom = {
+
+};
 
 // Keep track of how many answers are submitted.  Wait until all answers are in before starting game.
 const numberOfAnswersForRoom = {};
@@ -16,6 +18,17 @@ export function deleteSavedPromptsForRoom(roomCode) {
   delete promptsForRoom[roomCode];
   delete unusedPromptsForRoom[roomCode];
   delete winningAnswersForRoom[roomCode];
+}
+
+export function getReport(roomCode) { //TODO: format report
+  // TODO: for each prompt:
+  // - count total number of votes
+  // - count percentage of funniest for AI
+  // - count percentage of AI for AI
+  // TODO: overall percentage of funniest votes for AI (separately include number of votes numerator denominator)
+  // TODO: overall percentage of AI votes for AI
+
+  return promptsForRoom[roomCode];
 }
 
 export function getOnePromptAndAnswersForRoom(roomCode) { //TODO: ADD AI GENERATED ANSWER 
@@ -51,7 +64,7 @@ export function getPopularAnswers(roomCode) {
   return winningAnswers;
 }
 
-export function getVotes(prompt, roomCode, numberOfPlayers) { // TODO: Fix me
+export function getVotes(prompt, roomCode, numberOfPlayers) { 
   const votes = [];
   Object.entries(promptsForRoom[roomCode][prompt]).forEach(([answer, properties]) => {
     console.log("answer ", answer); 
@@ -62,6 +75,8 @@ export function getVotes(prompt, roomCode, numberOfPlayers) { // TODO: Fix me
       points: totalVotesForAnswer.length * POINTS_PER_VOTE,
       submitter: properties.submitter,
       votes: totalVotesForAnswer,
+      numFunniestVotes: properties.votes ? properties.votes.length : 0,
+      numAIVotes: properties.aiVotes ? properties.aiVotes.length : 0,
     });
   });
 
@@ -135,11 +150,30 @@ export function storeAnswerForPrompt({ prompt, playerName, answer, roomCode }) {
   }
 }
 
-export function storeVoteForPrompt({ prompt, playerName, roomCode, answerVotedFor }) {
+export function storeVoteForPrompt({ prompt, playerName, roomCode, answerVotedFor, aiVote }) {
+  // funny vote
   if (!promptsForRoom[roomCode][prompt][answerVotedFor].votes) {
     promptsForRoom[roomCode][prompt][answerVotedFor].votes = []; 
   }
   promptsForRoom[roomCode][prompt][answerVotedFor].votes.push(playerName);
+
+  const funniestSubmitter = promptsForRoom[roomCode][prompt][answerVotedFor].submitter;
+  if (funniestSubmitter === "AI") {
+    promptsForRoom[roomCode].numTimesAIVotedFunniest++;
+  }
+
+  // ai vote
+  if (!promptsForRoom[roomCode][prompt][aiVote].aiVotes) {
+    promptsForRoom[roomCode][prompt][aiVote].aiVotes = []; 
+  }
+  promptsForRoom[roomCode][prompt][aiVote].aiVotes.push(playerName);
+
+  const aiSubmitter = promptsForRoom[roomCode][prompt][aiVote].submitter;
+  if (aiSubmitter === "AI") {
+    promptsForRoom[roomCode].numTimesAIVotedAI++;
+  }
+
+  promptsForRoom[roomCode].numVotes++; 
 }
 
 function generatePairs(n) {
@@ -173,7 +207,11 @@ export function assignPromptsForPlayers({ players, roomCode, roomOptions }) {
   if (promptsForRoom[roomCode]) {
     deleteSavedPromptsForRoom(roomCode);
   }
-  promptsForRoom[roomCode] = {};
+  promptsForRoom[roomCode] = {
+    numVotes: 0,
+    numTimesAIVotedFunniest: 0,
+    numTimesAIVotedAI: 0,
+  };
   numberOfAnswersForRoom[roomCode] = 0;
   unusedPromptsForRoom[roomCode] = [];
   winningAnswersForRoom[roomCode] = [];
@@ -190,14 +228,6 @@ export function assignPromptsForPlayers({ players, roomCode, roomOptions }) {
     promptsForRoom[roomCode][prompt] = {};
     unusedPromptsForRoom[roomCode].push(prompt);
   }
-
-  // TODO: add AI player that pretends to be a real player (should be easy to switch which model, i.e. via langchain)
-  // TODO: add option to vote for who AI is (optionally, you don't have to do it every round)
-  // TODO: track percentage of time AI is voted to be AI
-  // TODO: track percentage of time AI wins
-  // TODO: generate report at end of game with stats
-
-  //TODO: alternative, for every round, include an additional answer that is AI generated (this is probably better)
 
   let promptAssignments = generatePairs(players.length);
 
