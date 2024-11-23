@@ -2,6 +2,9 @@
   "name": "quiplash-js",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
