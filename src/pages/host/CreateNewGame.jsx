@@ -43,9 +43,9 @@ class CreateNewGame extends React.Component {
   render() {
     return (
       <div className="new-game-form">
-        <h1>Quiplash-JS</h1>
+        <h1>quip among us</h1>
         <button className="submit-form-button" onClick={this.onStartGameClick}>
-          Start new Quiplash Game
+          Create a lobby
         </button>
         <div className="room-options">
           <label>

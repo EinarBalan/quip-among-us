@@ -57,8 +57,9 @@ export function initializeQuiplashHandler(io) {
           getPopularAnswers(socket.roomCode),
         );
 
-        // get report and write to file
+        // get report 
         const report = getReport(socket.roomCode);
+        const reportJSON = JSON.stringify(report, null, 2);
 
         // if file already exists, add a number to the end of the filename
         let reportPath = path.join(__dirname, "../reports", `${socket.roomCode}.json`);
@@ -68,7 +69,7 @@ export function initializeQuiplashHandler(io) {
           i++;
         }
 
-        fs.writeFile(reportPath, JSON.stringify(report, null, 2), (err) => {
+        fs.writeFile(reportPath, reportJSON, (err) => {
           if (err) {
             console.error("Error writing report to file:", err);
           } else {
@@ -76,7 +77,8 @@ export function initializeQuiplashHandler(io) {
           }
         });
 
-        
+        console.log("------------------" + "REPORT: " + socket.roomCode + "------------------");
+        console.log(reportJSON);
       }
     });
     socket.on(WS_EVENT.INCOMING.PLAYER_JOIN, (player) => {
