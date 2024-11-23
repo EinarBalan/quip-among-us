@@ -60,7 +60,14 @@ export function initializeQuiplashHandler(io) {
         // get report and write to file
         const report = getReport(socket.roomCode);
 
-        const reportPath = path.join(__dirname, "../reports", `${socket.roomCode}.json`);
+        // if file already exists, add a number to the end of the filename
+        let reportPath = path.join(__dirname, "../reports", `${socket.roomCode}.json`);
+        let i = 1;
+        while (fs.existsSync(reportPath)) {
+          reportPath = path.join(__dirname, "../reports", `${socket.roomCode}-${i}.json`);
+          i++;
+        }
+
         fs.writeFile(reportPath, JSON.stringify(report, null, 2), (err) => {
           if (err) {
             console.error("Error writing report to file:", err);

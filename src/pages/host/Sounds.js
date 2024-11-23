@@ -1,6 +1,6 @@
 import lobbyOst from '../../assets/lobby-ost.mp3';
 
-const GLOBAL_VOLUME = 0;
+const GLOBAL_VOLUME = 0.5;
 const backgroundMusic = new Audio(lobbyOst);
 
 export function playBackgroundMusic() {
@@ -41,5 +41,5 @@ export function speakText(text) {
   utterance.rate = 1.2;
   // utterance.pitch = 2;
   utterance.volume = 0.25;
-  window.speechSynthesis.speak(utterance);
+  // window.speechSynthesis.speak(utterance);
 }
