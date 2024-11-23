@@ -4,6 +4,8 @@ import { initializePunchGameHandler } from "./handlers/PunchGameHandler";
 import { initializeShakeGameHandler } from "./handlers/ShakeGameHandler";
 import { createRoom } from "./state/PlayersInRooms";
 
+require('dotenv').config();
+
 const app = express();
 app.use(express.json());
 const server = require("http").createServer(app);
@@ -11,6 +13,8 @@ const io = require("socket.io")(server);
 
 const PORT = process.env.PORT || 3001;
 const path = require("path");
+const fs = require("fs");
+const archiver = require("archiver");
 
 app.use(function (request, response, next) {
   // Heroku terminates SSL connections at the load balancer level, so req.secure will never be true
@@ -36,6 +40,25 @@ app.get("/game/*", function (req, res) {
 app.post("/create-new-game", function (req, res, next) {
   const roomCode = createRoom(req.body);
   res.send(roomCode);
+});
+
+app.get("/api/reports", function (req, res) {
+  const output = fs.createWriteStream(path.join(__dirname, "reports.zip"));
+  const archive = archiver("zip", {
+    zlib: { level: 9 }
+  });
+
+  output.on("close", function () {
+    res.download(path.join(__dirname, "reports.zip"));
+  });
+
+  archive.on("error", function (err) {
+    throw err;
+  });
+
+  archive.pipe(output);
+  archive.directory(path.join(__dirname, "reports"), false);
+  archive.finalize();
 });
 
 initializeQuiplashHandler(io);

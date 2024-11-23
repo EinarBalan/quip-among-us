@@ -1,17 +1,19 @@
-import { OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY } from "../env";
 import axios from "axios";
 
+require('dotenv').config();
+
 import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
+const openai = new OpenAI();
 
 import Anthropic from "@anthropic-ai/sdk";
-const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+const anthropic = new Anthropic();
 
 export const models = ["gpt", "gemini", "claude"];
 
 const systemMessage = "You're playing a game called Quiplash. You will be given prompts and your goal is to produce the funniest response possible. Stay concise, ideally less than 7 words. If there are blanks in the prompt, fill in the blanks. Don't end your sentences in periods and don't always capitalize the first word in every sentence.";
 
-export async function generateAIAnswer(prompt, model) {    
+export async function generateAIAnswer(prompt, model) {  
+    model = 2;  
     if (model === 0) { // OpenAI
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
@@ -23,7 +25,7 @@ export async function generateAIAnswer(prompt, model) {
         return completion.choices[0].message.content;
     }
     else if (model === 1) { // Google Gemini
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
         const data = {
             contents: [

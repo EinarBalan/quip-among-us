@@ -75,6 +75,8 @@ export function initializeQuiplashHandler(io) {
             console.log("Report successfully written to", reportPath);
           }
         });
+
+        
       }
     });
     socket.on(WS_EVENT.INCOMING.PLAYER_JOIN, (player) => {
