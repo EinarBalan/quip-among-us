@@ -80,7 +80,7 @@ class Lobby extends Component {
           <tr>
             <td className="instructions-cell">
               <div className="lobby-room-instructions">
-                Go to <span className="room-url">quiplashjs.herokuapp.com</span> on your mobile device
+                Go to <span className="room-url">einarbalan.com/quipamongus</span> on your mobile device
               </div>
               <div className="lobby-room-code-text">Room Code</div>
               <div className="room-code">{this.getRoomCode()}</div>
