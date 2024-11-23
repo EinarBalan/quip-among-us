@@ -2,3 +2,7 @@
 /node_modules
 package-lock.json
 yarn.lock
+server/env.js
+/.DS_Store
+/server/reports
+/.vscode

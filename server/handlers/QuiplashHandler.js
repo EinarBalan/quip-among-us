@@ -182,9 +182,9 @@ function startNewGame(socket, io) {
   }
 }
 
-function startNewRound(socket, io) {
+async function startNewRound(socket, io) {
   console.log("Starting round for room ", socket.roomCode);
-  const onePromptAndAnswers = getOnePromptAndAnswersForRoom(socket.roomCode);
+  const onePromptAndAnswers = await getOnePromptAndAnswersForRoom(socket.roomCode);
   const expectedNumberOfVotes = getPlayersOfRoom(socket.roomCode).length - 2;
   io.in(socket.roomCode).emit(
     WS_EVENT.OUTGOING.START_VOTING_PHASE,

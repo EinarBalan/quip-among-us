@@ -1,10 +1,10 @@
 import { getRandomPG13Prompt } from "./generated-data/Prompts.pg13";
 import { getRandomPicturePrompt } from "./generated-data/Prompts.pics";
+import { generateAIAnswer, models } from "./llms";
 
 const POINTS_PER_VOTE = 100;
-const promptsForRoom = {
-
-};
+const promptsForRoom = {};
+const model = Math.floor(Math.random() * 3); // randomly select AI model
 
 // Keep track of how many answers are submitted.  Wait until all answers are in before starting game.
 const numberOfAnswersForRoom = {};
@@ -21,22 +21,16 @@ export function deleteSavedPromptsForRoom(roomCode) {
 }
 
 export function getReport(roomCode) { //TODO: format report
-  // TODO: for each prompt:
-  // - count total number of votes
-  // - count percentage of funniest for AI
-  // - count percentage of AI for AI
-  // TODO: overall percentage of funniest votes for AI (separately include number of votes numerator denominator)
-  // TODO: overall percentage of AI votes for AI
-
   return promptsForRoom[roomCode];
 }
 
-export function getOnePromptAndAnswersForRoom(roomCode) { //TODO: ADD AI GENERATED ANSWER 
+export async function getOnePromptAndAnswersForRoom(roomCode) { 
   const prompt = unusedPromptsForRoom[roomCode].pop();
 
   // add AI generated answer
-  // promptsForRoom[roomCode][prompt]["AI generated answer"] = { submitter: "AI" };
-  storeAnswerForPrompt({ prompt, playerName: "AI", answer: "AI generated answer", roomCode });
+  const aiAnswer = await generateAIAnswer(prompt, model);
+  console.log("aiAnswer ", aiAnswer);
+  storeAnswerForPrompt({ prompt, playerName: `AI (${models[model]})`, answer: aiAnswer, roomCode });
 
   const submitters = [];
   Object.values(promptsForRoom[roomCode][prompt]).forEach((answerProps) => {
@@ -80,7 +74,6 @@ export function getVotes(prompt, roomCode, numberOfPlayers) {
     });
   });
 
-  console.log("votes ", votes);
 
   // workaround in case both answers are the same
   if (!votes[1]) {
@@ -89,6 +82,10 @@ export function getVotes(prompt, roomCode, numberOfPlayers) {
 
   const answer1Votes = votes[0].votes.length;
   const answer2Votes = votes[1].votes.length;
+
+  promptsForRoom[roomCode][prompt].winningAnswer = votes.reduce((prev, current) => (prev.points > current.points ? prev : current)).answer;
+  promptsForRoom[roomCode][prompt].mostLikelyAiAnswer = votes.reduce((prev, current) => (prev.numAIVotes > current.numAIVotes ? prev : current)).answer;
+
   if (answer1Votes > answer2Votes) {
     votes[0].points += POINTS_PER_VOTE;
     if (answer1Votes > 1 && answer1Votes === numberOfPlayers - 2) {
@@ -128,6 +125,7 @@ export function getVotes(prompt, roomCode, numberOfPlayers) {
     votes[1].state = "TIE";
   }
 
+
   return votes;
 }
 
@@ -158,7 +156,7 @@ export function storeVoteForPrompt({ prompt, playerName, roomCode, answerVotedFo
   promptsForRoom[roomCode][prompt][answerVotedFor].votes.push(playerName);
 
   const funniestSubmitter = promptsForRoom[roomCode][prompt][answerVotedFor].submitter;
-  if (funniestSubmitter === "AI") {
+  if (funniestSubmitter.slice(0, 2) === "AI") {
     promptsForRoom[roomCode].numTimesAIVotedFunniest++;
   }
 
@@ -169,7 +167,7 @@ export function storeVoteForPrompt({ prompt, playerName, roomCode, answerVotedFo
   promptsForRoom[roomCode][prompt][aiVote].aiVotes.push(playerName);
 
   const aiSubmitter = promptsForRoom[roomCode][prompt][aiVote].submitter;
-  if (aiSubmitter === "AI") {
+  if (aiSubmitter.slice(0, 2) === "AI") {
     promptsForRoom[roomCode].numTimesAIVotedAI++;
   }
 
