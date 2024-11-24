@@ -29,7 +29,7 @@ export async function getOnePromptAndAnswersForRoom(roomCode) {
   // add AI generated answer
   const model = Math.floor(Math.random() * 3); // randomly select AI model
   const aiAnswer = await generateAIAnswer(prompt, model);
-  console.log("aiAnswer (${models[model]})", aiAnswer);
+  console.log(`aiAnswer (${models[model]})`, aiAnswer);
   storeAnswerForPrompt({ prompt, playerName: `AI (${models[model]})`, answer: aiAnswer, roomCode });
 
   const submitters = [];
