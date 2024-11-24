@@ -13,7 +13,6 @@ export const models = ["gpt", "gemini", "claude"];
 const systemMessage = "You're playing a game called Quiplash. You will be given prompts and your goal is to produce the funniest response possible. Stay concise, ideally less than 7 words. If there are blanks in the prompt, fill in the blanks. Don't end your sentences in periods and don't always capitalize the first word in every sentence.";
 
 export async function generateAIAnswer(prompt, model) { 
-    model = 2;
     if (model === 0) { // OpenAI
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
