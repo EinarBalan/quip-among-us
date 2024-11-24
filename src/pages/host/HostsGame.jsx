@@ -333,10 +333,13 @@ class HostsGame extends Component {
           <div>
             <h1 className="prompt" dangerouslySetInnerHTML={{ __html: this.state.prompt }}></h1>
             <div className="answers">
-              {this.state.votingOptions.map((voteOption) => {
+              {this.state.votingOptions.map((voteOption, i) => {
                 let cardClasses = "card";
-                if (answersCount % 2 === 1) {
-                  cardClasses += " reversed";
+                if (i == 0) {
+                  cardClasses += " left";
+                }
+                else if (i == 2) {
+                  cardClasses += " right";
                 }
                 answersCount++;
                 const cardContent = voteOption.startsWith("data:") ? (
@@ -361,10 +364,13 @@ class HostsGame extends Component {
           <div>
             <h1 className="prompt" dangerouslySetInnerHTML={{ __html: this.state.prompt }}></h1>
             <div className="answers">
-              {this.state.votingResults.map((voteResult) => {
+              {this.state.votingResults.slice(0, 3).map((voteResult, i) => {
                 let cardClasses = "card";
-                if (count % 2 === 1) {
-                  cardClasses += " reversed";
+                if (i == 0) {
+                  cardClasses += " left";
+                }
+                else if (i == 2) {
+                  cardClasses += " right";
                 }
                 count++;
                 if (voteResult.state === "WINNER") {
@@ -380,6 +386,10 @@ class HostsGame extends Component {
                 ) : (
                   <h1>{voteResult.answer}</h1>
                 );
+
+                // console.log("VOTE RESULT: ");
+                // console.log(voteResult);
+
                 return (
                   <div className="wrapper">
                     <div className={cardClasses}>
@@ -391,7 +401,10 @@ class HostsGame extends Component {
                       voteResult.points ? "+" + voteResult.points : "No"
                     } Points`}</div>
                     <div className="voters">
-                      {voteResult.votes.length === 0 ? "No Votes" : voteResult.votes.join(", ")}
+                      {voteResult.numFunniestVotes + " votes"}
+                    </div>
+                    <div className="voters">
+                      {voteResult.numAIVotes + (voteResult.numAIVotes == 1 ? " person thought this was AI..." : " people thought this was AI...")}
                     </div>
                   </div>
                 );

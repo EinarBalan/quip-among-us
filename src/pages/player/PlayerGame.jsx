@@ -94,7 +94,7 @@ class PlayerGame extends Component {
     }
   }
 
-  handleSubmitVoteClick(answerVotedFor, isFunnyVote) { //TODO: modify this so that it will only emit if both votes are submitted
+  handleSubmitVoteClick(answerVotedFor, isFunnyVote) { //TODO: fix if multiple voters
     if (isFunnyVote) {
       this.setState({ funnyVoteSubmitted: answerVotedFor}, this.checkAndSubmitVote);
     }
@@ -110,7 +110,7 @@ class PlayerGame extends Component {
         ai: this.state.aiVoteSubmitted
       }
       getPlayerSocket().emit("SUBMIT_VOTE", { prompt: this.state.prompt, answerVotedFor });
-      this.setState({ phase: "WAITING_FOR_NEXT_ROUND" });
+      this.setState({ phase: "WAITING_FOR_NEXT_ROUND", funnyVoteSubmitted: null, aiVoteSubmitted: null });
     }
   }
 
@@ -210,7 +210,7 @@ class PlayerGame extends Component {
         return (
           <div>
             <h1 dangerouslySetInnerHTML={{ __html: this.state.prompt }}></h1>
-            <h2>Which one do you like more</h2>
+            <h2>Which is funniest?</h2>
             {this.state.votingOptions.map((voteOption) => {
               let buttonText = voteOption;
               if (voteOption.startsWith("data:")) {

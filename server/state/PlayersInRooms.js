@@ -7,12 +7,13 @@ export function addHostToRoom(roomCode, hostSocketId) {
 }
 
 export function addPlayerToRoom(roomCode, player) {
+  console.log(rooms[roomCode].players.length);
   if (rooms[roomCode]) {
     if (rooms[roomCode].started) {
       console.warn("Could not add player as game has already started: ", roomCode);
       return false;
     }
-    if (rooms[roomCode].players.length > MAX_NUMBER_OF_PLAYERS) {
+    if (rooms[roomCode].players.length >= MAX_NUMBER_OF_PLAYERS) {
       console.warn("Could not add player as room is already full: ", roomCode);
       return false;
     }

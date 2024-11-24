@@ -59,10 +59,11 @@ class Lobby extends Component {
     if (this.state.lobbyPlayers.length < 3) {
       alert("You need at least three players to play this game.");
       return;
-    } else if (this.state.lobbyPlayers.length > 8) {
-      alert("You have too many players.  Max number of players is 8.");
-      return;
-    }
+    } 
+    // else if (this.state.lobbyPlayers.length > 8) {
+    //   alert("You have too many players.  Max number of players is 8.");
+    //   return;
+    // }
     const socket = getHostSocket();
     socket.emit("HOST_STARTING_GAME");
     this.props.history.push("/hostsgame");

@@ -100,6 +100,7 @@ export function initializeQuiplashHandler(io) {
         socket.to(socket.roomCode).emit(WS_EVENT.OUTGOING.LOBBY_PLAYERS_UPDATED, getPlayersOfRoom(player.roomCode));
       } else {
         socket.emit(WS_EVENT.OUTGOING.FAILED_TO_JOIN_ROOM);
+        console.warn(`Failed to add ${newPlayerName} to room ${player.roomCode}`);
       }
     });
     socket.on(WS_EVENT.INCOMING.SUBMIT_ANSWER, ({ prompt, answer }) => {
@@ -108,7 +109,7 @@ export function initializeQuiplashHandler(io) {
       } else {
         console.log("Got answer from ", socket.nickname, ": ", answer);
       }
-      storeAnswerForPrompt({ prompt, playerName: socket.nickname, answer, roomCode: socket.roomCode }); //! important
+      storeAnswerForPrompt({ prompt, playerName: socket.nickname, answer, roomCode: socket.roomCode }); 
       // CHECK IF ALL PLAYERS HAVE SUBMITTED, then go to next phase (voting)
       const expectedNumberOfAnswers = getPlayersOfRoom(socket.roomCode).length * 2;
       const receivedNumberOfAnswers = getNumberOfAnswersForRoom(socket.roomCode);
