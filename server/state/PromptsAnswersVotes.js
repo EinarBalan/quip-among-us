@@ -4,7 +4,6 @@ import { generateAIAnswer, models } from "./llms";
 
 const POINTS_PER_VOTE = 100;
 const promptsForRoom = {};
-const model = Math.floor(Math.random() * 3); // randomly select AI model
 
 // Keep track of how many answers are submitted.  Wait until all answers are in before starting game.
 const numberOfAnswersForRoom = {};
@@ -28,8 +27,9 @@ export async function getOnePromptAndAnswersForRoom(roomCode) {
   const prompt = unusedPromptsForRoom[roomCode].pop();
 
   // add AI generated answer
+  const model = Math.floor(Math.random() * 3); // randomly select AI model
   const aiAnswer = await generateAIAnswer(prompt, model);
-  console.log("aiAnswer ", aiAnswer);
+  console.log("aiAnswer (${models[model]})", aiAnswer);
   storeAnswerForPrompt({ prompt, playerName: `AI (${models[model]})`, answer: aiAnswer, roomCode });
 
   const submitters = [];
