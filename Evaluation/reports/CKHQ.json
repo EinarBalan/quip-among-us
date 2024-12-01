@@ -1,0 +1,101 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 3,
+    "numTimesAIVotedAI": 6,
+    "Where do you think the beef really is?": {
+        "CS 263 project group chat": {
+            "submitter": "crying ",
+            "votes": []
+        },
+        "netflix": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "In the fridge, next to the vegetables": {
+            "submitter": "AI (gpt)",
+            "votes": [
+                "lily",
+                "yuri"
+            ],
+            "aiVotes": [
+                "lily",
+                "yuri"
+            ]
+        },
+        "winningAnswer": "In the fridge, next to the vegetables",
+        "mostLikelyAiAnswer": "In the fridge, next to the vegetables"
+    },
+    "What you don’t want to hear from the passenger next to you at the start of a 20-hour flight": {
+        "Trump-Biden debate": {
+            "submitter": "lily",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "I just had gastric bypass surgery I don't know what that is but it sounds smelly": {
+            "submitter": "crying ",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "i brought my bagpipes collection with me": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "i brought my bagpipes collection with me",
+        "mostLikelyAiAnswer": "I just had gastric bypass surgery I don't know what that is but it sounds smelly"
+    },
+    "The best way to scare a burglar": {
+        "act like Kevin in home alone": {
+            "submitter": "yuri",
+            "votes": [
+                "yun",
+                "crying "
+            ]
+        },
+        "have a dynamite": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "a Roomba, covered in knives\n": {
+            "submitter": "AI (gemini)",
+            "votes": [],
+            "aiVotes": [
+                "yun",
+                "crying "
+            ]
+        },
+        "winningAnswer": "act like Kevin in home alone",
+        "mostLikelyAiAnswer": "a Roomba, covered in knives\n"
+    },
+    "A strange poster to hang in a college dorm room": {
+        "a poster of yourself": {
+            "submitter": "yuri",
+            "votes": [
+                "crying "
+            ]
+        },
+        "nude of themselves": {
+            "submitter": "yun",
+            "votes": [
+                "lily"
+            ]
+        },
+        "\"Sleep is for the weak—let's party!\"": {
+            "submitter": "AI (gpt)",
+            "votes": [],
+            "aiVotes": [
+                "crying ",
+                "lily"
+            ]
+        },
+        "winningAnswer": "nude of themselves",
+        "mostLikelyAiAnswer": "\"Sleep is for the weak—let's party!\""
+    }
+}

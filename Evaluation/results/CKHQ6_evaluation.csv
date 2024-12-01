@@ -1,0 +1,5 @@
+Model,Answer,Winning Answer,BERT Score
+claude,pineapple on pizza is a war crime,we need to stop this endless...........,0.8326542973518372
+gemini,My in-laws,we need to stop this endless...........,0.8327609300613403
+gemini,Cats: The Revenge,My in-laws,0.8517139554023743
+gemini,Bring your mom,Cats: The Revenge,0.8570289015769958

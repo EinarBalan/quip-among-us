@@ -1,0 +1,5 @@
+Model,Answer,Winning Answer,BERT Score
+gpt,texting your ex for a favor,my crippling student loan debt,0.8264481425285339
+gpt,vegan unicorn tears for magic crunch,texting your ex for a favor,0.8271255493164062
+gpt,Biggie Smalls' Bigger Brother,vegan unicorn tears for magic crunch,0.7675906419754028
+gemini,my crippling student loan debt,my crippling student loan debt,1.0000001192092896

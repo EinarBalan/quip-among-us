@@ -1,0 +1,100 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 3,
+    "numTimesAIVotedAI": 7,
+    "Write a newspaper headline that will really catch people’s attention": {
+        "jan 6th lib edition": {
+            "submitter": "crying ",
+            "votes": []
+        },
+        "Billionaire looking for a babysitter": {
+            "submitter": "yuri",
+            "votes": [
+                "lily",
+                "yun"
+            ]
+        },
+        "Aliens demand Earth’s best pizza recipe!": {
+            "submitter": "AI (gpt)",
+            "votes": [],
+            "aiVotes": [
+                "lily",
+                "yun"
+            ]
+        },
+        "winningAnswer": "Billionaire looking for a babysitter",
+        "mostLikelyAiAnswer": "Aliens demand Earth’s best pizza recipe!"
+    },
+    "Mother Teresa’s deepest secret ": {
+        "Stealing a pencil from school": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "she skipped Church": {
+            "submitter": "yuri",
+            "votes": [
+                "yun",
+                "crying "
+            ],
+            "aiVotes": [
+                "crying "
+            ]
+        },
+        "secretly stole candy from sick children": {
+            "submitter": "AI (claude)",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "winningAnswer": "she skipped Church",
+        "mostLikelyAiAnswer": "secretly stole candy from sick children"
+    },
+    "A lesson that probably wouldn’t be taught on <i>Sesame Street</i>": {
+        "You need to eat to grow": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "love is pain": {
+            "submitter": "yun",
+            "votes": [
+                "yuri"
+            ]
+        },
+        "Advanced tax evasion techniques\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "crying "
+            ],
+            "aiVotes": [
+                "yuri",
+                "crying "
+            ]
+        },
+        "winningAnswer": "Advanced tax evasion techniques\n",
+        "mostLikelyAiAnswer": "Advanced tax evasion techniques\n"
+    },
+    "A business or service that shouldn't have a drive-through window": {
+        "the dmv": {
+            "submitter": "crying ",
+            "votes": []
+        },
+        "medical": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "crematorium: drop off your loved ones here": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "yuri",
+                "lily"
+            ],
+            "aiVotes": [
+                "yuri",
+                "lily"
+            ]
+        },
+        "winningAnswer": "crematorium: drop off your loved ones here",
+        "mostLikelyAiAnswer": "crematorium: drop off your loved ones here"
+    }
+}

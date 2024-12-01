@@ -1,0 +1,105 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 2,
+    "numTimesAIVotedAI": 5,
+    "A rejected Monopoly game piece ": {
+        "Super Mario": {
+            "submitter": "yuri",
+            "votes": []
+        },
+        "flattened roach": {
+            "submitter": "yun",
+            "votes": [
+                "lily"
+            ]
+        },
+        "crusty old sock from the Great Depression": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "crying "
+            ],
+            "aiVotes": [
+                "crying ",
+                "lily"
+            ]
+        },
+        "winningAnswer": "crusty old sock from the Great Depression",
+        "mostLikelyAiAnswer": "crusty old sock from the Great Depression"
+    },
+    "Turns out, the meaning of life is _________": {
+        "live fully": {
+            "submitter": "lily",
+            "votes": [
+                "crying "
+            ]
+        },
+        "bear with it": {
+            "submitter": "yuri",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "a really long nap\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "crying "
+            ]
+        },
+        "winningAnswer": "a really long nap\n",
+        "mostLikelyAiAnswer": "a really long nap\n"
+    },
+    "The manliest way to start a conversation": {
+        "Let me talk": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "pec dance": {
+            "submitter": "crying ",
+            "votes": [
+                "yuri",
+                "yun"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "\"bro, your mom\"\n": {
+            "submitter": "AI (gemini)",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "winningAnswer": "pec dance",
+        "mostLikelyAiAnswer": "\"bro, your mom\"\n"
+    },
+    "Come up with a bad tourism slogan for the Old Faithful geyser": {
+        "watch us blow our": {
+            "submitter": "crying ",
+            "votes": [
+                "lily",
+                "yuri"
+            ]
+        },
+        "deep dive tour": {
+            "submitter": "yun",
+            "votes": [],
+            "aiVotes": [
+                "lily"
+            ]
+        },
+        "wait 90 minutes for a 3-second show": {
+            "submitter": "AI (gpt)",
+            "votes": [],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "watch us blow our",
+        "mostLikelyAiAnswer": "wait 90 minutes for a 3-second show"
+    }
+}

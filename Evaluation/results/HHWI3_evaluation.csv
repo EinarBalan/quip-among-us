@@ -1,0 +1,5 @@
+Model,Answer,Winning Answer,BERT Score
+gpt,Eau de Golden Girl,"Lather, Rinse, SCREAM INTO THE VOID, Repeat",0.7961357235908508
+claude,"Lather, Rinse, SCREAM INTO THE VOID, Repeat","Lather, Rinse, SCREAM INTO THE VOID, Repeat",1.0000001192092896
+claude,tiny disappointed camels waiting their turn,tiny disappointed camels waiting their turn,0.9999999403953552
+claude,your family tree is from Chernobyl,your family tree is from Chernobyl,1.0000001192092896

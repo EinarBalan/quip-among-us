@@ -1,0 +1,105 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 4,
+    "numTimesAIVotedAI": 6,
+    "Odd new shampoo instructions: “Lather, Rinse, _________, Repeat.”": {
+        "Sing baby from Justin beiver": {
+            "submitter": "lily",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "Dance": {
+            "submitter": "yuri",
+            "votes": [
+                "yun"
+            ]
+        },
+        "Lather, Rinse, SCREAM INTO THE VOID, Repeat": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "crying "
+            ],
+            "aiVotes": [
+                "crying "
+            ]
+        },
+        "winningAnswer": "Lather, Rinse, SCREAM INTO THE VOID, Repeat",
+        "mostLikelyAiAnswer": "Lather, Rinse, SCREAM INTO THE VOID, Repeat"
+    },
+    "What’s really in a camel’s hump?": {
+        "hope of a better life": {
+            "submitter": "crying ",
+            "votes": [
+                "yuri"
+            ],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "its luggage": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "tiny disappointed camels waiting their turn": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "tiny disappointed camels waiting their turn",
+        "mostLikelyAiAnswer": "tiny disappointed camels waiting their turn"
+    },
+    "Four-leaf clovers are lucky. But if you find a five-leaf clover...": {
+        "you should probably smoke less": {
+            "submitter": "crying ",
+            "votes": [
+                "lily"
+            ]
+        },
+        "happiness": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "your family tree is from Chernobyl": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "yuri"
+            ],
+            "aiVotes": [
+                "yuri",
+                "lily"
+            ]
+        },
+        "winningAnswer": "your family tree is from Chernobyl",
+        "mostLikelyAiAnswer": "your family tree is from Chernobyl"
+    },
+    "The name of a new perfume by Betty White": {
+        "the golden perfume": {
+            "submitter": "yuri",
+            "votes": []
+        },
+        "Creamy White": {
+            "submitter": "yun",
+            "votes": [
+                "lily"
+            ]
+        },
+        "Eau de Golden Girl": {
+            "submitter": "AI (gpt)",
+            "votes": [
+                "crying "
+            ],
+            "aiVotes": [
+                "lily",
+                "crying "
+            ]
+        },
+        "winningAnswer": "Eau de Golden Girl",
+        "mostLikelyAiAnswer": "Eau de Golden Girl"
+    }
+}

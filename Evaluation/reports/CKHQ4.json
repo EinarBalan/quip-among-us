@@ -1,0 +1,101 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 2,
+    "numTimesAIVotedAI": 3,
+    "A bad name for a brand of bottled water": {
+        "FountainPark": {
+            "submitter": "lily",
+            "votes": [],
+            "aiVotes": [
+                "yuri",
+                "yun"
+            ]
+        },
+        "liquid death": {
+            "submitter": "crying ",
+            "votes": [
+                "yuri",
+                "yun"
+            ]
+        },
+        "moist towelette tears\n": {
+            "submitter": "AI (gemini)",
+            "votes": []
+        },
+        "winningAnswer": "liquid death",
+        "mostLikelyAiAnswer": "FountainPark"
+    },
+    "What Waldo from “Where’s Waldo?” says to himself in the mirror": {
+        "Where is Waldo?": {
+            "submitter": "yuri",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "crying "
+            ]
+        },
+        "Gee I'm just great": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "i'm incredibly hard to find\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "crying "
+            ],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "winningAnswer": "i'm incredibly hard to find\n",
+        "mostLikelyAiAnswer": "i'm incredibly hard to find\n"
+    },
+    "A college major you don’t see at many universities": {
+        "Not crying from too much work": {
+            "submitter": "yuri",
+            "votes": [
+                "lily",
+                "crying "
+            ]
+        },
+        "master of taco": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "Procrastination Studies with a minor in Naps": {
+            "submitter": "AI (gpt)",
+            "votes": [],
+            "aiVotes": [
+                "lily",
+                "crying "
+            ]
+        },
+        "winningAnswer": "Not crying from too much work",
+        "mostLikelyAiAnswer": "Procrastination Studies with a minor in Naps"
+    },
+    "What’s the Mona Lisa smiling about?": {
+        "leo was making faces at her while painting": {
+            "submitter": "crying ",
+            "votes": [
+                "yuri"
+            ],
+            "aiVotes": [
+                "yuri",
+                "lily"
+            ]
+        },
+        "herself trying not to smile": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "she just saw your selfie": {
+            "submitter": "AI (gpt)",
+            "votes": [
+                "lily"
+            ]
+        },
+        "winningAnswer": "she just saw your selfie",
+        "mostLikelyAiAnswer": "leo was making faces at her while painting"
+    }
+}

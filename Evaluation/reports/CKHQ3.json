@@ -1,0 +1,106 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 0,
+    "numTimesAIVotedAI": 5,
+    "The first thing to do if you’re attacked by a shark": {
+        "question everything you ever did wrong to get to that point. you're a good person. why do bad things happen to good people?": {
+            "submitter": "crying ",
+            "votes": [
+                "yuri"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "stab myself for faster death": {
+            "submitter": "yun",
+            "votes": [
+                "lily"
+            ]
+        },
+        "play dead (sharks hate boring meals)": {
+            "submitter": "AI (claude)",
+            "votes": [],
+            "aiVotes": [
+                "lily"
+            ]
+        },
+        "winningAnswer": "stab myself for faster death",
+        "mostLikelyAiAnswer": "play dead (sharks hate boring meals)"
+    },
+    "Something that’s made worse by adding cheese": {
+        "banana": {
+            "submitter": "lily",
+            "votes": [
+                "yuri"
+            ]
+        },
+        "human crevices": {
+            "submitter": "crying ",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "grandma's open-casket funeral": {
+            "submitter": "AI (claude)",
+            "votes": [],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "human crevices",
+        "mostLikelyAiAnswer": "grandma's open-casket funeral"
+    },
+    "The worst name for an all-girl band": {
+        "xy": {
+            "submitter": "yuri",
+            "votes": [
+                "crying ",
+                "yun"
+            ],
+            "aiVotes": [
+                "crying "
+            ]
+        },
+        "girlies": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "Moms Against Rock n’ Roll": {
+            "submitter": "AI (gpt)",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "winningAnswer": "xy",
+        "mostLikelyAiAnswer": "Moms Against Rock n’ Roll"
+    },
+    "What the hot trend in weddings will be in the year 2046": {
+        "marry AI humanoid": {
+            "submitter": "yun",
+            "votes": [
+                "lily"
+            ]
+        },
+        "weddings on mars": {
+            "submitter": "yuri",
+            "votes": [
+                "crying "
+            ]
+        },
+        "hologram guests who never leave the buffet": {
+            "submitter": "AI (claude)",
+            "votes": [],
+            "aiVotes": [
+                "lily",
+                "crying "
+            ]
+        },
+        "winningAnswer": "weddings on mars",
+        "mostLikelyAiAnswer": "hologram guests who never leave the buffet"
+    }
+}

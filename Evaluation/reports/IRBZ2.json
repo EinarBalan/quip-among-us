@@ -1,0 +1,102 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 4,
+    "numTimesAIVotedAI": 5,
+    "The government should legalize...": {
+      "random holiday": {
+        "submitter": "yun",
+        "votes": [],
+        "aiVotes": [
+          "yuri"
+        ]
+      },
+      "overthrowing the government": {
+        "submitter": "cr",
+        "votes": [
+          "lily"
+        ]
+      },
+      "unicorn riding lessons\n": {
+        "submitter": "AI (gemini)",
+        "votes": [
+          "yuri"
+        ],
+        "aiVotes": [
+          "lily"
+        ]
+      },
+      "winningAnswer": "unicorn riding lessons\n",
+      "mostLikelyAiAnswer": "unicorn riding lessons\n"
+    },
+    "Superman’s special power that he never tells anyone about": {
+      "eating with his feet": {
+        "submitter": "lily",
+        "votes": [
+          "cr"
+        ]
+      },
+      "see other people's poop": {
+        "submitter": "yun",
+        "votes": [
+          "yuri"
+        ]
+      },
+      "can make any baby instantly stop crying": {
+        "submitter": "AI (claude)",
+        "votes": [],
+        "aiVotes": [
+          "yuri",
+          "cr"
+        ]
+      },
+      "winningAnswer": "see other people's poop",
+      "mostLikelyAiAnswer": "can make any baby instantly stop crying"
+    },
+    "The worst magic trick": {
+      "hitting your head": {
+        "submitter": "lily",
+        "votes": [
+          "yun"
+        ]
+      },
+      "pizza gone in 10 minutes": {
+        "submitter": "yuri",
+        "votes": []
+      },
+      "making your wallet disappear": {
+        "submitter": "AI (gpt)",
+        "votes": [
+          "cr"
+        ],
+        "aiVotes": [
+          "cr",
+          "yun"
+        ]
+      },
+      "winningAnswer": "making your wallet disappear",
+      "mostLikelyAiAnswer": "making your wallet disappear"
+    },
+    "Like “dinger,” “grand salami,” and “jack,” come up with a new slang term for a home run in baseball": {
+      "crying": {
+        "submitter": "cr",
+        "votes": []
+      },
+      "base": {
+        "submitter": "yuri",
+        "votes": [],
+        "aiVotes": [
+          "yun",
+          "lily"
+        ]
+      },
+      "yeet meat into the cheap seats": {
+        "submitter": "AI (claude)",
+        "votes": [
+          "yun",
+          "lily"
+        ]
+      },
+      "winningAnswer": "yeet meat into the cheap seats",
+      "mostLikelyAiAnswer": "base"
+    }
+  }

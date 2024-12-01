@@ -1,0 +1,5 @@
+Model,Answer,Winning Answer,BERT Score
+gpt,wait 90 minutes for a 3-second show,crusty old sock from the Great Depression,0.8376877903938293
+claude,crusty old sock from the Great Depression,crusty old sock from the Great Depression,1.0
+gemini,a really long nap,crusty old sock from the Great Depression,0.8390936255455017
+gemini,"""bro, your mom""",a really long nap,0.8105339407920837

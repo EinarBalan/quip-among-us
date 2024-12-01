@@ -1,0 +1,104 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 4,
+    "numTimesAIVotedAI": 4,
+    "The worst thing to try to sell door-to-door": {
+        "your leftover food": {
+            "submitter": "lily",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "yun",
+                "crying "
+            ]
+        },
+        "a door": {
+            "submitter": "yuri",
+            "votes": []
+        },
+        "My soul\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "crying "
+            ]
+        },
+        "winningAnswer": "My soul\n",
+        "mostLikelyAiAnswer": "your leftover food"
+    },
+    "Why ducks really fly south in the winter": {
+        "in hopes of a fresh start. they have had a difficult life. its hard being a duck.": {
+            "submitter": "crying ",
+            "votes": [],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "because they need to duck from too many planes in the sky": {
+            "submitter": "lily",
+            "votes": [
+                "yun"
+            ]
+        },
+        "to avoid paying their massive gambling debts": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "yuri"
+            ],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "winningAnswer": "to avoid paying their massive gambling debts",
+        "mostLikelyAiAnswer": "to avoid paying their massive gambling debts"
+    },
+    "Something that should never be “homemade”": {
+        "drug": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "goulash": {
+            "submitter": "crying ",
+            "votes": [],
+            "aiVotes": [
+                "lily"
+            ]
+        },
+        "meth lab in grandma's basement": {
+            "submitter": "AI (claude)",
+            "votes": [
+                "yuri",
+                "lily"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "meth lab in grandma's basement",
+        "mostLikelyAiAnswer": "meth lab in grandma's basement"
+    },
+    "The title of a college admission essay that would definitely get rejected": {
+        "how to become a kardashian": {
+            "submitter": "yuri",
+            "votes": [
+                "lily"
+            ]
+        },
+        "(Other University Name)": {
+            "submitter": "yun",
+            "votes": [
+                "crying "
+            ]
+        },
+        "My Hamster Wrote This\n": {
+            "submitter": "AI (gemini)",
+            "votes": [],
+            "aiVotes": [
+                "crying ",
+                "lily"
+            ]
+        },
+        "winningAnswer": "(Other University Name)",
+        "mostLikelyAiAnswer": "My Hamster Wrote This\n"
+    }
+}

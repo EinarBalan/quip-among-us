@@ -1,0 +1,103 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 2,
+    "numTimesAIVotedAI": 4,
+    "A theme for a desk calendar that wouldn’t sell very well ": {
+      "horror": {
+        "submitter": "yun",
+        "votes": [],
+        "aiVotes": [
+          "lily"
+        ]
+      },
+      "nlp class": {
+        "submitter": "cr",
+        "votes": [
+          "yuri",
+          "lily"
+        ]
+      },
+      "Existential dread daily affirmations\n": {
+        "submitter": "AI (gemini)",
+        "votes": [],
+        "aiVotes": [
+          "yuri"
+        ]
+      },
+      "winningAnswer": "nlp class",
+      "mostLikelyAiAnswer": "Existential dread daily affirmations\n"
+    },
+    "Ozzy Osbourne’s Twitter password, probably": {
+      "MagicTreeHouse": {
+        "submitter": "lily",
+        "votes": [
+          "yuri"
+        ],
+        "aiVotes": [
+          "yun"
+        ]
+      },
+      "I don't know who that is": {
+        "submitter": "cr",
+        "votes": []
+      },
+      "barkAtTheMoon666": {
+        "submitter": "AI (gpt)",
+        "votes": [
+          "yun"
+        ],
+        "aiVotes": [
+          "yuri"
+        ]
+      },
+      "winningAnswer": "barkAtTheMoon666",
+      "mostLikelyAiAnswer": "barkAtTheMoon666"
+    },
+    "Invent a holiday that you think everyone would enjoy": {
+      "free icecream day": {
+        "submitter": "yuri",
+        "votes": [
+          "yun",
+          "cr"
+        ]
+      },
+      "holiday month": {
+        "submitter": "lily",
+        "votes": []
+      },
+      "National Nap Day: snooze your worries away": {
+        "submitter": "AI (gpt)",
+        "votes": [],
+        "aiVotes": [
+          "yun",
+          "cr"
+        ]
+      },
+      "winningAnswer": "free icecream day",
+      "mostLikelyAiAnswer": "National Nap Day: snooze your worries away"
+    },
+    "Dodgeball would be an even better sport if _________ were allowed": {
+      "hitting a person": {
+        "submitter": "yun",
+        "votes": [
+          "cr"
+        ]
+      },
+      "alliances": {
+        "submitter": "yuri",
+        "votes": [],
+        "aiVotes": [
+          "lily",
+          "cr"
+        ]
+      },
+      "players could use whipped cream grenades": {
+        "submitter": "AI (gpt)",
+        "votes": [
+          "lily"
+        ]
+      },
+      "winningAnswer": "players could use whipped cream grenades",
+      "mostLikelyAiAnswer": "alliances"
+    }
+  }

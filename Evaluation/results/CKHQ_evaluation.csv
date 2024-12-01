@@ -1,0 +1,5 @@
+Model,Answer,Winning Answer,BERT Score
+gpt,"In the fridge, next to the vegetables","In the fridge, next to the vegetables",0.9999998807907104
+gpt,"""Sleep is for the weak—let's party!""",i brought my bagpipes collection with me,0.8357493281364441
+claude,i brought my bagpipes collection with me,"In the fridge, next to the vegetables",0.846479058265686
+gemini,"a Roomba, covered in knives","In the fridge, next to the vegetables",0.8588305711746216

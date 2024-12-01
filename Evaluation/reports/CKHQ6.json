@@ -1,0 +1,102 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 4,
+    "numTimesAIVotedAI": 6,
+    "We can all agree that _________": {
+        "this is painful": {
+            "submitter": "crying ",
+            "votes": [
+                "yuri"
+            ]
+        },
+        "we need to stop this endless...........": {
+            "submitter": "yun",
+            "votes": [
+                "lily"
+            ]
+        },
+        "pineapple on pizza is a war crime": {
+            "submitter": "AI (claude)",
+            "votes": [],
+            "aiVotes": [
+                "yuri",
+                "lily"
+            ]
+        },
+        "winningAnswer": "we need to stop this endless...........",
+        "mostLikelyAiAnswer": "pineapple on pizza is a war crime"
+    },
+    "It’s bad to be buried alive. It’s worse to be buried alive with _________.": {
+        "a skunk": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "my family": {
+            "submitter": "yun",
+            "votes": [
+                "crying "
+            ]
+        },
+        "My in-laws\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "yuri"
+            ],
+            "aiVotes": [
+                "yuri",
+                "crying "
+            ]
+        },
+        "winningAnswer": "My in-laws\n",
+        "mostLikelyAiAnswer": "My in-laws\n"
+    },
+    "A name for a really bad Broadway musical": {
+        "West End": {
+            "submitter": "yuri",
+            "votes": [
+                "yun"
+            ]
+        },
+        "Singing Songs": {
+            "submitter": "lily",
+            "votes": []
+        },
+        "Cats: The Revenge\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "crying "
+            ],
+            "aiVotes": [
+                "crying ",
+                "yun"
+            ]
+        },
+        "winningAnswer": "Cats: The Revenge\n",
+        "mostLikelyAiAnswer": "Cats: The Revenge\n"
+    },
+    "One thing never to do on a first date": {
+        "Go on Tinder": {
+            "submitter": "yuri",
+            "votes": [],
+            "aiVotes": [
+                "lily"
+            ]
+        },
+        "\"I love you\"": {
+            "submitter": "crying ",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "Bring your mom\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "lily",
+                "yun"
+            ]
+        },
+        "winningAnswer": "Bring your mom\n",
+        "mostLikelyAiAnswer": "\"I love you\""
+    }
+}

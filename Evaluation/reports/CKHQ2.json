@@ -1,0 +1,104 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 5,
+    "numTimesAIVotedAI": 5,
+    "Three things are certain in life: Death, Taxes, and _________": {
+        "criminals": {
+            "submitter": "crying ",
+            "votes": []
+        },
+        "money": {
+            "submitter": "yun",
+            "votes": [],
+            "aiVotes": [
+                "lily"
+            ]
+        },
+        "my crippling student loan debt\n": {
+            "submitter": "AI (gemini)",
+            "votes": [
+                "lily",
+                "yuri"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "my crippling student loan debt\n",
+        "mostLikelyAiAnswer": "my crippling student loan debt\n"
+    },
+    "A dangerous thing to do while driving": {
+        "constantly looking at the mirrors": {
+            "submitter": "lily",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "go on your phone": {
+            "submitter": "crying ",
+            "votes": []
+        },
+        "texting your ex for a favor": {
+            "submitter": "AI (gpt)",
+            "votes": [
+                "yuri",
+                "yun"
+            ],
+            "aiVotes": [
+                "yuri"
+            ]
+        },
+        "winningAnswer": "texting your ex for a favor",
+        "mostLikelyAiAnswer": "texting your ex for a favor"
+    },
+    "Which new marshmallow should Lucky Charms cereal introduce?": {
+        "A Crumbl Lucky Chamrms": {
+            "submitter": "yuri",
+            "votes": [],
+            "aiVotes": [
+                "yun"
+            ]
+        },
+        "pigeon marshmallow": {
+            "submitter": "lily",
+            "votes": [
+                "crying "
+            ]
+        },
+        "vegan unicorn tears for magic crunch": {
+            "submitter": "AI (gpt)",
+            "votes": [
+                "yun"
+            ],
+            "aiVotes": [
+                "crying "
+            ]
+        },
+        "winningAnswer": "vegan unicorn tears for magic crunch",
+        "mostLikelyAiAnswer": "vegan unicorn tears for magic crunch"
+    },
+    "The best name for an obese rapper": {
+        "Fatty Patty": {
+            "submitter": "yun",
+            "votes": []
+        },
+        "Larger hopes": {
+            "submitter": "yuri",
+            "votes": [
+                "crying ",
+                "lily"
+            ]
+        },
+        "Biggie Smalls' Bigger Brother": {
+            "submitter": "AI (gpt)",
+            "votes": [],
+            "aiVotes": [
+                "crying ",
+                "lily"
+            ]
+        },
+        "winningAnswer": "Larger hopes",
+        "mostLikelyAiAnswer": "Biggie Smalls' Bigger Brother"
+    }
+}

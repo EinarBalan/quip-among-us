@@ -1,0 +1,106 @@
+{
+    "numVotes": 8,
+    "numTimesAIVotedFunniest": 3,
+    "numTimesAIVotedAI": 4,
+    "The newest health food: _________ juice": {
+      "gym shirt": {
+        "submitter": "crying ",
+        "votes": [
+          "yun",
+          "lily"
+        ]
+      },
+      "oat": {
+        "submitter": "yuri",
+        "votes": []
+      },
+      "kale and existential dread juice": {
+        "submitter": "AI (gpt)",
+        "votes": [],
+        "aiVotes": [
+          "yun",
+          "lily"
+        ]
+      },
+      "winningAnswer": "gym shirt",
+      "mostLikelyAiAnswer": "kale and existential dread juice"
+    },
+    "The worst way to fly: _________ Airlines": {
+      "Heaven": {
+        "submitter": "yun",
+        "votes": [],
+        "aiVotes": [
+          "yuri"
+        ]
+      },
+      "spirit (there is no joke spirit is just bad)": {
+        "submitter": "crying ",
+        "votes": [
+          "yuri"
+        ],
+        "aiVotes": [
+          "lily"
+        ]
+      },
+      "crying babies and farts Airlines": {
+        "submitter": "AI (claude)",
+        "votes": [
+          "lily"
+        ]
+      },
+      "winningAnswer": "crying babies and farts Airlines",
+      "mostLikelyAiAnswer": "spirit (there is no joke spirit is just bad)"
+    },
+    "An ill-advised outfit to wear to your first day at a new job": {
+      "ballerina tutu outfit": {
+        "submitter": "lily",
+        "votes": [
+          "yuri"
+        ],
+        "aiVotes": [
+          "crying "
+        ]
+      },
+      "hoodie": {
+        "submitter": "yun",
+        "votes": []
+      },
+      "a superhero costume with cape attached": {
+        "submitter": "AI (gpt)",
+        "votes": [
+          "crying "
+        ],
+        "aiVotes": [
+          "yuri"
+        ]
+      },
+      "winningAnswer": "a superhero costume with cape attached",
+      "mostLikelyAiAnswer": "a superhero costume with cape attached"
+    },
+    "The worst warning to read on some medicine you just swallowed": {
+      "you're turning into a cockroach": {
+        "submitter": "yuri",
+        "votes": []
+      },
+      "this is poisonous": {
+        "submitter": "lily",
+        "votes": [
+          "crying "
+        ],
+        "aiVotes": [
+          "yun"
+        ]
+      },
+      "may cause spontaneous breakdancing in public": {
+        "submitter": "AI (claude)",
+        "votes": [
+          "yun"
+        ],
+        "aiVotes": [
+          "crying "
+        ]
+      },
+      "winningAnswer": "may cause spontaneous breakdancing in public",
+      "mostLikelyAiAnswer": "may cause spontaneous breakdancing in public"
+    }
+  }
