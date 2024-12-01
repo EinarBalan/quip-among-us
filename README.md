@@ -45,13 +45,6 @@ Note: The React web app needs to get built, whereas the node server does not.
 - `evaluate_quiplash.py`
   - Automates the evaluation of JSON files.
   - Saves results in the `./results/` directory.
-
-## Directory Structure
-
-- `build` - Built web app
-- `public` - Template html from create-react-app
-- `server` - Node Server code
-- `src` - Front-end code
 ### How to Run Evaluation
 
 1. Place your JSON files in the `./reports/` directory.
@@ -59,6 +52,15 @@ Note: The React web app needs to get built, whereas the node server does not.
    ```bash
    python evaluate_quiplash.py
 3. If you want to compare the BertScore by files and model, run the `CS263_Evaluation.ipynb` file.
+
+## Directory Structure
+
+- `build` - Built web app
+- `public` - Template html from create-react-app
+- `server` - Node Server code
+- `src` - Front-end code
+- `Evaluation` - Evaluation with BertScore
+
 ## TODO List
 
 ### Done
