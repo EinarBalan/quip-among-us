@@ -37,13 +37,28 @@ Note: The React web app needs to get built, whereas the node server does not.
 - If you have a firewall, ensure it allows connections from NodeJS
 - Open your other device's browser and connect to `HOST_IP:3001`
 
+## Evaluation
+- `./Evaluation` - Evaluation with BertScore
+- `CS263_Evaluation.ipynb`
+  - A Jupyter Notebook for running and visualizing evaluation processes interactively.
+  - Use this file to explore the evaluation pipeline step by step and verify results.
+- `evaluate_quiplash.py`
+  - Automates the evaluation of JSON files.
+  - Saves results in the `./results/` directory.
+
 ## Directory Structure
 
 - `build` - Built web app
 - `public` - Template html from create-react-app
 - `server` - Node Server code
 - `src` - Front-end code
+### How to Run Evaluation
 
+1. Place your JSON files in the `./reports/` directory.
+2. Run the evaluation script:
+   ```bash
+   python evaluate_quiplash.py
+3. If you want to compare the BertScore by files and model, run the `CS263_Evaluation.ipynb` file.
 ## TODO List
 
 ### Done
