@@ -22,6 +22,9 @@ Playable in the same room or remotely via screensharing.
 - Backend - Nodejs, Express
 - SocketIO
 
+### Extracting answers for the prompts
+The Python script(`state/generated-data/extract.py`) helps generate funny responses for a collection of prompts stored in `state/generated-data/Prompts.pg13.js` using the Gemini 1.5 Flash AI model. The script processes prompts and instructs Gemini to respond with witty, humorous answers, saving both prompts and responses to a CSV file for easy tracking and review.
+
 ## How to Start Local Server
 
 - `npm start`
