@@ -1,0 +1,23 @@
+{
+    "gpt": {
+        "numTimesVotedFunniest": 11,
+        "numTimesVotedAI": 24,
+        "numRoundsPlayed": 17,
+        "percentTimesVotedFunniest": 8.088235294117647,
+        "percentTimesVotedAI": 17.647058823529413
+    },
+    "claude": {
+        "numTimesVotedFunniest": 14,
+        "numTimesVotedAI": 22,
+        "numRoundsPlayed": 18,
+        "percentTimesVotedFunniest": 9.722222222222223,
+        "percentTimesVotedAI": 15.277777777777779
+    },
+    "gemini": {
+        "numTimesVotedFunniest": 15,
+        "numTimesVotedAI": 20,
+        "numRoundsPlayed": 17,
+        "percentTimesVotedFunniest": 11.029411764705882,
+        "percentTimesVotedAI": 14.705882352941178
+    }
+}
